@@ -1,0 +1,9 @@
+name: "S3 Deploy"
+description: "Deploy folder to an AWS S3 repository"
+author: alinv0
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
