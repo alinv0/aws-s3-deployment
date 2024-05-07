@@ -8,10 +8,10 @@ LABEL "com.github.actions.color"="green"
 LABEL version="0.5.1"
 LABEL repository="https://github.com/alinv0/aws-s3-deployment"
 LABEL homepage="https://alinvoinea.eu/"
-LABEL maintainer="Jake Jarvis <mail@alinvoinea.eu>"
+LABEL maintainer="Alin Voinea <mail@alinvoinea.eu>"
 
 # https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
-ENV AWSCLI_VERSION='1.18.14'
+ENV AWSCLI_VERSION='2.15.45'
 
 RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
