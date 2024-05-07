@@ -11,7 +11,7 @@ LABEL homepage="https://alinvoinea.eu/"
 LABEL maintainer="Alin Voinea <mail@alinvoinea.eu>"
 
 # https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
-ENV AWSCLI_VERSION='2.15.45'
+ENV AWSCLI_VERSION='1.18.14'
 
 RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
