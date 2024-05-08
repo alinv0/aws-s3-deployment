@@ -22,6 +22,11 @@ if [ -z "$AWS_REGION" ]; then
   AWS_REGION="us-east-1"
 fi
 
+if [ -z "$CLOUDFRONT_DISTRO_ID" ]; then
+  echo "CLOUDFRONT_DISTRO_ID is not set. Quitting."
+  exit 1
+fi
+
 # Override default AWS endpoint if user sets AWS_S3_ENDPOINT.
 if [ -n "$AWS_S3_ENDPOINT" ]; then
   ENDPOINT_APPEND="--endpoint-url $AWS_S3_ENDPOINT"
@@ -36,9 +41,9 @@ ${AWS_REGION}
 text
 EOF
 
-aws cloudfront create-invalidation \
-    --distribution-id ${CLOUDFRONT_DISTRO_ID} \
-    --paths "/*"
+sh -c "aws cloudfront create-invalidation \
+--distribution-id ${CLOUDFRONT_DISTRO_ID} \
+--paths \"/*\""
 
 # Sync using our dedicated profile and suppress verbose messages.
 # All other flags are optional via the `args:` directive.
